@@ -1,0 +1,85 @@
+\documentclass[12pt]{report}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[francais]{babel}
+\usepackage{titlesec}
+\usepackage{sectsty}
+\usepackage[toc,page]{appendix}
+\usepackage{floatrow}
+\usepackage{graphicx}
+\usepackage{subcaption}
+\usepackage{pdflscape}
+\usepackage[autostyle]{csquotes}
+\usepackage[a4paper ,left=2.5cm,right=3cm,top=3cm,bottom=3cm]{geometry}
+\pagestyle{headings}
+\usepackage{hyperref}
+\hypersetup{
+    colorlinks=true,
+    linktoc=all,
+    linkcolor=blue,
+    urlcolor=blue,
+    citecolor=blue
+}
+\setlength{\parskip}{1em}
+
+\titleformat{\chapter}[display]{\bfseries}{}{0pt}{\Huge}
+\titlespacing*{\chapter}{0pt}{-50pt}{40pt}
+% \frenchbsetup{ItemLabels=\textbullet}
+
+\newcommand*\cleartoleftpage{
+\clearpage\ifodd\c@page
+\hbox{}
+\vspace*{\fill}
+\thispagestyle{empty}
+\newpage
+\fi
+}
+
+\begin{document}
+
+\hyphenpenalty=10000
+\exhyphenpenalty=10000
+\renewcommand\appendixtocname{Annexes}
+\renewcommand\appendixpagename{Annexes}
+
+\title{Romain GUILLOT - Rapport de stage}
+\author{Romain GUILLOT}
+
+\input{content/title.tex}
+
+\input{content/merci.tex}
+
+\input{content/resume.tex}
+
+
+\renewcommand{\baselinestretch}{0}\normalsize
+{
+  \hypersetup{linkcolor=black}
+  \tableofcontents
+
+  \listoffigures
+}
+\renewcommand{\baselinestretch}{1.0}\normalsize
+
+
+\input{content/intro.tex}
+
+\input{content/travail.tex}
+
+\input{content/bilan.tex}
+
+\input{content/dev_durable.tex}
+
+\input{content/conclusion.tex}
+
+
+\nocite{*}
+\bibliographystyle{abbrv}
+\bibliography{content/bibli}
+
+\input{content/annexes.tex}
+
+\input{content/back.tex}
+
+\end{document}
