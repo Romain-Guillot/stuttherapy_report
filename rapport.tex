@@ -11,9 +11,11 @@
 \usepackage{subcaption}
 \usepackage{pdflscape}
 \usepackage[autostyle]{csquotes}
+\usepackage{wrapfig}
 \usepackage[a4paper ,left=2.5cm,right=3cm,top=3cm,bottom=3cm]{geometry}
 \pagestyle{headings}
 \usepackage{hyperref}
+\usepackage{blindtext}
 \usepackage{float}
 \hypersetup{
     colorlinks=true,
@@ -22,7 +24,8 @@
     urlcolor=blue,
     citecolor=blue
 }
-\setlength{\parskip}{1em}
+\setlength{\parskip}{\baselineskip}%
+\setlength{\parindent}{0pt}%
 
 \titleformat{\chapter}[display]{\bfseries}{}{0pt}{\Huge}
 \titlespacing*{\chapter}{0pt}{-50pt}{40pt}
@@ -37,12 +40,15 @@
 \fi
 }
 
+
+
 \begin{document}
 
 \hyphenpenalty=10000
 \exhyphenpenalty=10000
 \renewcommand\appendixtocname{Annexes}
 \renewcommand\appendixpagename{Annexes}
+
 
 \title{Romain GUILLOT - Rapport de stage}
 \author{Romain GUILLOT}
@@ -64,6 +70,7 @@
 \renewcommand{\baselinestretch}{1.0}\normalsize
 
 
+
 \input{content/intro.tex}
 
 \input{content/travail.tex}
@@ -76,7 +83,7 @@
 
 
 \nocite{*}
-\bibliographystyle{abbrv}
+\bibliographystyle{unsrt}
 \bibliography{content/bibli}
 
 \input{content/annexes.tex}
