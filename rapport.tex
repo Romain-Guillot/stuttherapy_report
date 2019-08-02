@@ -2,7 +2,7 @@
 
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
-\usepackage[francais]{babel}
+\usepackage[french]{babel}
 \usepackage{titlesec}
 \usepackage{sectsty}
 \usepackage[toc,page]{appendix}
@@ -25,10 +25,8 @@
     citecolor=blue
 }
 \setlength{\parskip}{\baselineskip}%
-\setlength{\parindent}{0pt}%
 
 \titleformat{\chapter}[display]{\bfseries}{}{0pt}{\Huge}
-\titlespacing*{\chapter}{0pt}{-50pt}{40pt}
 % \frenchbsetup{ItemLabels=\textbullet}
 
 \newcommand*\cleartoleftpage{
@@ -43,6 +41,9 @@
 
 
 \begin{document}
+
+\titlespacing*{\chapter}{0pt}{-50pt}{40pt}
+
 
 \hyphenpenalty=10000
 \exhyphenpenalty=10000
@@ -69,17 +70,15 @@
 }
 \renewcommand{\baselinestretch}{1.0}\normalsize
 
+\titlespacing*{\chapter}{0pt}{-70pt}{40pt}
 
 
 \input{content/intro.tex}
-
 \input{content/travail.tex}
-
+\input{content/dev_durable.tex}
 \input{content/bilan.tex}
 
-\input{content/dev_durable.tex}
-
-\input{content/conclusion.tex}
+% \input{content/conclusion.tex}
 
 
 \nocite{*}
