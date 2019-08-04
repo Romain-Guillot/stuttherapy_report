@@ -9,7 +9,7 @@ The GUI of the application and the business logic must of course be separate. In
 
 The application architecture is a crucial choice in application development. The modification of the data in the business logic must be reflected in the GUI. A graphic component in Flutter is called \textit{widget} (button, text, layout, etc.). Mobile programming is asynchronous and reactive, data can be modified after a network call, by an external user or by another device for example; widgets must react to these changes.
 
-I have chosen to add a layer of providers between the GUI level and the business logic level. These providers provide the necessary data to the GUI through \textit{stream} (equivalent to \textit{observable} in \textit{ReactiveX}). Here, a stream can be seen as a unidirectional pipe, the provider inserts elements into this pipe, and the graphic part has access to the second end of the pipe to access the element in the pipe. Each new element inserted in the \textit{stream} replaces the eventual old element.
+I chose to add a layer of providers between the GUI level and the business logic level. These providers provide the necessary data to the GUI through \textit{stream} (equivalent to \textit{observable} in \textit{ReactiveX}). Here, a stream can be seen as a unidirectional pipe, the provider inserts elements into this pipe, and the graphic part has access to the second end of the pipe to access the element in the pipe. Each new element inserted in the \textit{stream} replaces the eventual old element.
 
 \begin{figure}[H]
   \includegraphics[width=.7\linewidth]{content/imgs/stream.png}
