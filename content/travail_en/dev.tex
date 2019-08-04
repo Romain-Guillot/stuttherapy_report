@@ -1,0 +1,53 @@
+\section{Application development, tasks to be completed, future of the application}
+
+\subsection{Developped features}
+The application is called \textbf{Stuttherapy}. Here is the (almost) exhaustive list of features developed during the 7 weeks devoted to development:
+
+\begin{itemize}
+
+  \item \textbf{For a user who stutters:}
+  \begin{itemize}
+    \item Three different exercises available: \textit{metronome}, \textit{mirroring} and \textit{reading} (see \nameref{sec:summary_cdc} for more information about the purpose of these exercises);
+    \item Progress for each of the exercises available in two forms:
+    \begin{itemize}
+      \item List of all exercises performed with the information and data of the exercise in question: date of creation, any audio or video recording and any words that the user has not been able to pronounce correctly;
+      \item A graphical visualization (line chart) of the percentage of successful word pronunciation in the different exercises. The user can change the time window of the graph to display his weekly, monthly or annual progress.
+    \end{itemize}
+    \item Access to his list of words \textit{saved}. The user can, if he wishes, indicate the words with which he had difficulties during the exercises, they will then be automatically saved in this list;
+    \item Synchronization and recovery of exercises in the cloud: the user can choose to synchronize or desynchronize the exercises he wants in the cloud through a user account. He can retrieve the synchronized exercises in the cloud on his device (if he change his phone for example);
+    \item The stuttering user can, from the speech therapist's ID, allow him or her to access and add comments to his or her list of synchronized exercises in the cloud. He can also delete it afterwards.
+  \end{itemize}
+
+  \item \textbf{For a speech therapist}
+  \begin{itemize}
+    \item Visualization of synchronized exercises of stuttering users who added him as a speech therapist (\textit{patients})
+    \item Deleting a patient
+  \end{itemize}
+\end{itemize}
+
+Screenshots of the application are available in the appendix \ref{appendix:screenshots}.
+
+\subsection{Et now ?}
+The application is fully functional and no known bugs have been identified. All the functionalities described in the \textit{software requirements specification (SRS)} written at the beginning of the project have been developed. However, there are still some improvements to be made to fully comply with the specifications of these given in the \textit{SRS}:
+
+\begin{itemize}
+  \item Currently, when the user accesses his exercise history, the resources used during the exercise are not displayed, only the training date, the possible voice / video recording and words not pronounced correctly are accessible;
+  \item When a user synchronizes an exercise in the cloud, the voice or video recording of the exercise is not saved in the cloud. Only the URI of the local file is saved in the database, so only the user with the file already saved in his phone can access it. These records should be saved in a storage space (e.g. \textit{Firebase Storage} to be consistent with the solutions currently in use) and the path to this file should be added to the database document for the exercise. It would then be necessary to think about the cost of the sotckage memory (and therefore the economic aspect) that this would generate. It would surely be necessary to set a backup quota per user and use compression to store these audio and video recordings;
+  \item It is currently impossible to permanently delete your user account from the cloud and this data;
+  \item Creating an account is currently only possible via an e-mail address and a password. It would be wise to offer the user a connection via social networks (\textit{Facebook}, \textit{Twitter}, etc.). This is easily achieved with the authentication system currently in use: \textit{Firebase Authentication}.
+\end{itemize}
+
+There are 3 types of tests to use when developing a Flutter application to ensure that the implemented features work well and appear correctly in the graphical interface:
+\begin{itemize}
+  \item \textbf{Unit tests} : to test a function, method or class;
+  \item \textbf{Integration tests} : to test a larger part of the application to make sure that everything works well together;
+  \item \textbf{Widget tests} : to test that the graphical user interface behaves as expected.
+\end{itemize}
+
+Some unit tests have been written, however, not all the features of the application are covered by these tests. It will therefore be necessary to complete these tests before adding new features to the application. Unfortunately, there are no integration tests or widget tests as I write these lines.
+
+
+
+
+
+% eof

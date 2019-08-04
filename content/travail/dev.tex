@@ -1,7 +1,7 @@
-\section{Developpement de l'application, tâches à finir, futur de l'application}
+\section{Développement de l'application, tâches à finir, futur de l'application}
 
 \subsection{Fonctionnalités developpées}
-L'application se nomme \textbf{Stuttherapy}. Voici la liste (presque) exhaustive des fonctionnalités developpées durant les 7 semaines consacrées au developpement :
+L'application se nomme \textbf{Stuttherapy}. Voici la liste (presque) exhaustive des fonctionnalités developpées durant les 7 semaines consacrées au développement :
 
 \begin{itemize}
 
@@ -10,17 +10,17 @@ L'application se nomme \textbf{Stuttherapy}. Voici la liste (presque) exhaustive
     \item Trois différents exercices disponibles : \textit{metronome}, \textit{mirroring} et \textit{reading} (voir \nameref{sec:resume_cdc} pour plus d'informations concernant le but de ces exercices) ;
     \item Progression pour chacun des exercices disponible sous deux formes :
     \begin{itemize}
-      \item Liste de tous les exercices effectués avec les informations et données de l'exercice en question : date de création, éventuel enregistrement audio ou vidéo et les éventuls mots dont l'utilisateur n'a pas réussi à prononcer correctement ;
-      \item Un représentation graphique \textit{ligne} du pourcentage de réussite de prononciation des mots au cours des différents exercices. L'utilisateur peut changer la fenêtre de temps du graphique pour afficher sa progression hebdomadaire, mensuelle ou annuelle.
+      \item Liste de tous les exercices effectués avec les informations et données de l'exercice en question : date de création, éventuel enregistrement audio ou vidéo et les éventuels mots dont l'utilisateur n'a pas réussi à prononcer correctement ;
+      \item Un visualisation graphique \textit{ligne} du pourcentage de réussite de prononciation des mots au cours des différents exercices. L'utilisateur peut changer la fenêtre de temps du graphique pour afficher sa progression hebdomadaire, mensuelle ou annuelle.
     \end{itemize}
-    \item Accès à sa liste de mots \textit{enregistrés}. L'utilisateur peut, si il le souhaite, indiqué les mots avec lesquels il a eu des difficultés lors des exercices, ils seront alors automatiquement enregistré dans cette liste ;
-    \item Synchroniser et récupérer des exercices dans le cloud : l'utilisateur peut choisir de synchroniser ou desynchroniser les exercices qu'il veut dans le cloud grâce à un compte utilisateur. Il peut récupérer les exercices synchronisé dans le cloud sur son appareil (en cas de changement de téléphone par exemple) ;
-    \item Ajouter un orthopédistes autorisé à avoir accès à ces exercices synchronisés dans le cloud : l'utilisateur peut, à partir de l'identifiant de l'orthopédiste, l'autorisé à accéder à sa liste d'exercices synchronisés dans le cloud et à y ajouter des commentaires. Il peut aussi le supprimer à posteriori.
+    \item Accès à sa liste des mots \textit{enregistrés}. L'utilisateur peut, s'il le souhaite, indiquer les mots avec lesquels il a eu des difficultés lors des exercices, ils seront alors automatiquement enregistrés dans cette liste ;
+    \item Synchronisation et récupération des exercices dans le cloud : l'utilisateur peut choisir de synchroniser ou desynchroniser les exercices qu'il veut dans le cloud grâce à un compte utilisateur. Il peut récupérer les exercices synchronisés dans le cloud sur son appareil (en cas de changement de téléphone par exemple) ;
+    \item L'utilisateur bègue peut, à partir de l'identifiant de l'orthophoniste, l'autoriser à accéder à sa liste d'exercices synchronisés dans le cloud et à y ajouter des commentaires. Il peut aussi le supprimer à posteriori.
   \end{itemize}
 
-  \item \textbf{Pour un orthopédiste :}
+  \item \textbf{Pour un orthophoniste :}
   \begin{itemize}
-    \item Visualisation des exercices synchronisés des utilisateurs bègues l'ayant ajouté en tant qu'orthopédiste (un tel utilisateur est appelé \textit{patient} pour l'orthopédiste)
+    \item Visualisation des exercices synchronisés des utilisateurs bègues l'ayant ajouté en tant qu'orthophoniste (\textit{patients})
     \item Suppression d'un patient
   \end{itemize}
 \end{itemize}
@@ -28,23 +28,23 @@ L'application se nomme \textbf{Stuttherapy}. Voici la liste (presque) exhaustive
 Des captures d'écran de l'application sont disponibles dans l'annexe \ref{appendix:screenshots}.
 
 \subsection{Et ensuite ?}
-L'application est entierement fonctionnelle et aucun bug connu n'a été identifié.  Toute les fonctionnalités décrites dans le \textit{software requirements specification (SRS)} rédigés en début de projet ont été developpées. Il reste cependant quelques améliorations à fournir pour coller complétement à la spécifications de celles-ci données dans le \textit{SRS} :
+L'application est entièrement fonctionnelle et aucun bug connu n'a été identifié. Toutes les fonctionnalités décrites dans le \textit{software requirements specification (SRS)} rédigés en début de projet ont été developpées. Il reste cependant quelques améliorations à fournir pour coller complétement à la spécifications de celles-ci données dans le \textit{SRS} :
 
 \begin{itemize}
-  \item Acutellement, lorsque l'utilisateur accède à son historique d'exercices effectués, les resources utilisées lors de celui-ci ne sont pas affichées, seuls le date d'entrainement, l'eventuel enreistrement vocal / vidéo et les mots non prononcé correctement sont disponibles ;
-  \item Lorsque un utilisateur synchronise un exercice dans le cloud, l'eventuel enregistrement vocal ou vidéo de l'exercice n'est pas sauvergardé dans le cloud. Seul l'URI du fichier local est sauvergardé dans la base de donnée, donc seul l'utilisateur avec le fichier déjà présent dans son téléphone peut y avoir accès. Il faudrait sauvegarder ces enregistrements dans un espace de stockage (par exemple \textit{Firebase Stockage} pour être consistent avec les solutions acutellement utilisées) et ajouter le chemin d'accès vers ce fichier dans le document de la base de donnée correspondant à l'exercice. Il faudrait alors réflechir au cout mémoire (et donc économique) que cela engendrerait. Il serait surrement necessaire de fixer un quota de sauvegarde par utilisateur et utiliser une compression pour stocké ces enregistrements audios et vidéos ;
-  \item La possibilités de supprimé définitivement sont compte utilisateur du cloud ainsi que ces données ;
-  \item Proposer à l'utilisateur les options de connexions via les réseaux sociaux (\textit{Facebook}, \textit{Twitter}, etc.). Cela est facilement réalisable avec le système d'authentification utilisé actuellement : \textit{Firebase Authentication}.
+  \item Actuellement, lorsque l'utilisateur accède à son historique d'exercices effectués, les ressources utilisées lors de celui-ci ne sont pas affichées, seuls le date d'entrainement, l'eventuel enreistrement vocal / vidéo et les mots non prononcés correctement sont accessible ;
+  \item Lorsque un utilisateur synchronise un exercice dans le cloud, l'eventuel enregistrement vocal ou vidéo de l'exercice n'est pas sauvergardé dans le cloud. Seul l'URI du fichier local est sauvergardé dans la base de données, donc seul l'utilisateur avec le fichier déjà présent dans son téléphone peut y avoir accès. Il faudrait sauvegarder ces enregistrements dans un espace de stockage (par exemple \textit{Firebase Stockage} pour être consistent avec les solutions acutellement utilisées) et ajouter le chemin d'accès vers ce fichier dans le document de la base de donnée correspondant à l'exercice. Il faudrait alors réflechir au coût mémoire (et donc économique) que cela engendrerait. Il serait sûrement necessaire de fixer un quota de sauvegarde par utilisateur et utiliser une compression pour stocker ces enregistrements audios et vidéos ;
+  \item Il est actuellement impossible de supprimer définitivement son compte utilisateur du cloud ainsi que ces données ;
+  \item La création de compte est actuellement uniquement possible via une adresse mail et un mot de passe. Il serait judicieux de proposer à l'utilisateur une connexion via les réseaux sociaux (\textit{Facebook}, \textit{Twitter}, etc.). Cela est facilement réalisable avec le système d'authentification utilisé actuellement : \textit{Firebase Authentication}.
 \end{itemize}
 
-Il y a 3 types de tests à utilisé lorsqu'on developpe une application Flutter pour être sûr que les fonctionnalités implémentées fonctionnent bien et apparaissent correctement dans l'interface graphique :
+Il y a 3 types de tests à utiliser lorsqu'on developpe une application Flutter pour être sûr que les fonctionnalités implémentées fonctionnent bien et apparaissent correctement dans l'interface graphique :
 \begin{itemize}
   \item \textbf{Les tests unitaires} : pour tester une fonction, une méthode ou une classe ;
-  \item \textbf{Les tests d'intégration} : pour tester une partie plus large de l'application, pour vérifier que tout marchent bien ensemble ;
+  \item \textbf{Les tests d'intégration} : pour tester une partie plus large de l'application pour vérifier que tout marchent bien ensemble ;
   \item \textbf{Les tests de widget} : pour tester que l'interface graphique se comporte bien comme prévu.
 \end{itemize}
 
-Quelques tests unitaires ont été écrit, cependant toutes les fonctionnalités de l'application ne sont pas couveretent par ces tests. Il sera donc \textbf{nécessaire} de complété ces tests avant d'ajouter de nouvelles foncionnalités à l'application. Il n'y a malheureusement pas de tests d'intégration ni de test de widget à l'heure où j'écris ces lignes.
+Quelques tests unitaires ont été écrit, cependant toutes les fonctionnalités de l'application ne sont pas couveretent par ces tests. Il sera donc nécessaire de complété ces tests avant d'ajouter de nouvelles foncionnalités à l'application. Il n'y a malheureusement pas de tests d'intégration ni de test de widget à l'heure où j'écris ces lignes.
 
 
 

@@ -1,0 +1,94 @@
+\documentclass[12pt]{report}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{titlesec}
+\usepackage{sectsty}
+\usepackage[toc,page]{appendix}
+\usepackage{floatrow}
+\usepackage{graphicx}
+\usepackage{subcaption}
+\usepackage{pdflscape}
+\usepackage[autostyle]{csquotes}
+\usepackage{wrapfig}
+\usepackage[a4paper ,left=2.5cm,right=3cm,top=3cm,bottom=3cm]{geometry}
+\pagestyle{headings}
+\usepackage{hyperref}
+\usepackage{blindtext}
+\usepackage{float}
+\hypersetup{
+    colorlinks=true,
+    linktoc=all,
+    linkcolor=blue,
+    urlcolor=blue,
+    citecolor=blue
+}
+\setlength{\parskip}{\baselineskip}%
+
+\titleformat{\chapter}[display]{\bfseries}{}{0pt}{\Huge}
+% \frenchbsetup{ItemLabels=\textbullet}
+
+\newcommand*\cleartoleftpage{
+\clearpage\ifodd\c@page
+\hbox{}
+\vspace*{\fill}
+\thispagestyle{empty}
+\newpage
+\fi
+}
+
+% \fancyhead{}
+% \fancyfoot{}
+% % Set the right side of the footer to be the page number
+% \fancyfoot[R]{\thepage}
+
+
+
+\begin{document}
+
+\titlespacing*{\chapter}{0pt}{-50pt}{40pt}
+
+
+\hyphenpenalty=10000
+\exhyphenpenalty=10000
+
+
+\title{Romain GUILLOT - Report}
+\author{Romain GUILLOT}
+
+\input{content/title_en.tex}
+
+\input{content/merci_en.tex}
+
+\input{content/resume.tex}
+
+
+\renewcommand{\baselinestretch}{0}\normalsize
+{
+  \hypersetup{linkcolor=black}
+  \tableofcontents
+
+  \listoffigures
+}
+\renewcommand{\baselinestretch}{1.0}\normalsize
+
+\titlespacing*{\chapter}{0pt}{-70pt}{40pt}
+
+
+\input{content/intro_en.tex}
+\input{content/travail_en.tex}
+\input{content/dev_durable_en.tex}
+\input{content/bilan_en.tex}
+
+% \input{content/conclusion.tex}
+
+
+\nocite{*}
+\bibliographystyle{unsrt}
+\bibliography{content/bibli}
+
+\input{content/annexes_en.tex}
+
+\input{content/back_en.tex}
+
+\end{document}

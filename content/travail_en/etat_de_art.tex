@@ -1,0 +1,53 @@
+\section{Choice of technologies}
+
+\subsection{Mobile application development framework}
+
+\textit{Android} and \textit{iOS} are the two most used mobile operating systems on smartphones in 2018, sharing  $74.45\%$ and $22.5\%$ the mobile OS market \cite{market_share}. There are mainly two solutions to develop a mobile application on these platforms:
+
+\begin{itemize}
+  \item \textit{Native app} : using platform-specific SDKs (\textit{software development kit}) (\textit{iOS} and \textit{Android}) that provide development and debugging tools to create applications for these platforms;
+  \item \textit{Hybrid app} : using a cross-platform framework that allows applications to be created on multiple platforms with the same code (without directly using the SDKs of the platforms).
+\end{itemize}
+
+The advantages of native applications compared to hybrid applications are:
+
+\begin{itemize}
+  \item The availability of all, and in particular the latest, functionalities of the operating systems;
+  \item The performance of the application by accessing directly the operating system of the platform on which the application is developed.
+\end{itemize}
+
+The major disadvantage is that it is necessary to develop, maintain and deploy the same application twice (once for \textit{Android} and once for \textit{iOS}).
+
+Multi-platform frameworks allow to write applications for \textit{iOS} and \textit{Android} with the same code (although it is also possible to write platform-specific code) allowing to have a shorter \textit{time to market} (time needed to make the product available on the market). These frameworks also often offer modern solutions that further reduce this \textit{time to market} by simplifying the development of the application. The disadvantages of these frameworks are unique to each of us. To start the comparison I chose the frameworks actively developed with a large and active community. The most popular frameworks in 2019 are \textbf{Flutter} (71,662 stars with 422 contributors on Github \cite{flutter}), \textbf{React Native} (79,513 stars with 1990 co-authors \cite{react}) and \textbf{Ionic}) (38,705 stars with 331 contributors \cite{ionic}).
+
+
+\begin{wrapfigure}{r}{0.25\textwidth}
+  \includegraphics[width=100pt]{content/imgs/flutter.png}
+\end{wrapfigure}
+
+I finally opted for \textbf{Flutter}, the cross-platform framewok developed by \textit{Google}. Flutter uses \textit{Dart}, an object-oriented programming language using a \textit{garbage collector} as \textit{Java} for example. I chose Flutter for several reasons:
+
+\paragraph{Performance}
+The application code is compiled in advance (\textit{Ahead-of-time compiled}) into native ARM code and not at runtime as \textit{React Native} does, which allows similar performance to native applications. It seems to be the most high-power mobile development framework on the market.
+
+\paragraph{GUI component}
+Flutter fully manages the rendering of graphic elements on its own canvas (\textit{= area where the graphic elements of the application are drawn}) without using native platform graphics components (as does \textit{React Native}). We can therefore have full control over the elements displayed. The application will look the same regardless of the versions of the operating systems on which the application is installed. This allows you to precisely manage what it will be displayed on all devices without testing the application on a multitude of phones.
+
+
+\subsection{Data storage in the cloud}
+The application must offer data sharing between stutterers and speech therapists. To do this, the data must be stored in the cloud. In order for users to be able to manage their data and for these data to be accessible only to authorized persons (and not on a public space), they will need to have a user account (email address / password).
+
+
+\begin{wrapfigure}{r}{0.25\textwidth}
+  \includegraphics[width=100pt]{content/imgs/firebase.png}
+\end{wrapfigure}
+I chose to use \textbf{Firebase} services, especially the noSQL database \textbf{Firestore} to store exercises and  \textit{Firebase Authentication} to manage users. I chose Firebase services for several reasons:
+
+\paragraph{Ease of use}
+Google develops and maintains a set of \textit{plugins} that allows to use Firebase products easily and quickly on Flutter mobile applications:  \textit{FlutterFire} \cite{flutterfire}. These plugins offer the latest features of Firebase products.
+
+\paragraph{Evolution of the application on other platforms}
+Firebase is widely used in the IT world today, Firebase products can be used anywhere easily thanks to a large number of plugins developed by Google and by the communities of different framework / languages or directly using the APIs of the products.
+
+\paragraph{Evolution of the use of the Cloud within the application}
+For the moment, only \textit{Firestore}, \textit{Firebase Authentication} and \textit{Firebase Storage} are planned to be used for the application. However, Firebase integrates many other services that could potentially be useful for the application. Among them, we can mention \textit{Firebase Analytics} to analyze user behavior on the application, \textit{Firebase AdMob} to integrate ads within the application and \textit{Cloud Functions} to perform functions on servers. All these products can be used closely in harmony, for example \textit{Cloud Firestore} can automatically trigger a function of \textit{Cloud Functions} when adding a new document to the database. So, \textbf{without} modifying the application code on the client side, it is possible to enrich or modify the application's functionalities by using the various Firebase services (authentication, advertising, database, storage, etc.).
