@@ -1,0 +1,47 @@
+\begin{thebibliography}{1}
+
+\bibitem{def_wiki}
+Wikipédia.
+\newblock Bégaiement.
+\newblock \url{https://fr.wikipedia.org/wiki/B%C3%A9gaiement?oldformat=true}.
+
+\bibitem{market_share}
+Martyn Casserly.
+\newblock iphone vs android market share.
+\newblock
+  \url{https://www.macworld.co.uk/feature/iphone/iphone-vs-android-market-share-3691861/},
+  2019.
+
+\bibitem{flutter}
+Flutter.
+\newblock Github - flutter.
+\newblock \url{https://github.com/flutter/flutter}, 2019.
+
+\bibitem{react}
+Facebook.
+\newblock Github - react native.
+\newblock \url{https://github.com/facebook/react-native}, 2019.
+
+\bibitem{ionic}
+Ionic.
+\newblock Github - ionic.
+\newblock \url{https://github.com/ionic-team/ionic}, 2019.
+
+\bibitem{flutterfire}
+Google.
+\newblock Flutterfire - documentation.
+\newblock \url{https://firebaseopensource.com/projects/flutter/plugins/}.
+
+\bibitem{scrum}
+Scrum.org.
+\newblock What is a sprint in scrum?
+\newblock \url{https://www.scrum.org/resources/what-is-a-sprint-in-scrum}.
+
+\bibitem{utp_gender}
+UTP.
+\newblock Engineering gender diversity.
+\newblock
+  \url{https://www.utp.edu.my/Pages/The-University/Publications/UTP-Impact/Engineering-Gender-Diversity.aspx},
+  2019.
+
+\end{thebibliography}

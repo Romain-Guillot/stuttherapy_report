@@ -1,0 +1,57 @@
+This is BibTeX, Version 0.99d (TeX Live 2017/Debian)
+Capacity: max_strings=100000, hash_size=100000, hash_prime=85009
+The top-level auxiliary file: rapport.aux
+The style file: unsrt.bst
+Database file #1: content/bibli.bib
+Warning--string name "january" is undefined
+--line 4 of file content/bibli.bib
+Warning--string name "february" is undefined
+--line 12 of file content/bibli.bib
+Warning--string name "august" is undefined
+--line 20 of file content/bibli.bib
+Warning--string name "august" is undefined
+--line 28 of file content/bibli.bib
+Warning--string name "august" is undefined
+--line 36 of file content/bibli.bib
+You've used 8 entries,
+            1791 wiz_defined-function locations,
+            478 strings with 4340 characters,
+and the built_in function-call counts, 1040 in all, are:
+= -- 85
+> -- 32
+< -- 0
++ -- 16
+- -- 8
+* -- 7
+:= -- 166
+add.period$ -- 24
+call.type$ -- 8
+change.case$ -- 8
+chr.to.int$ -- 0
+cite$ -- 8
+duplicate$ -- 40
+empty$ -- 145
+format.name$ -- 8
+if$ -- 246
+int.to.chr$ -- 0
+int.to.str$ -- 8
+missing$ -- 0
+newline$ -- 43
+num.names$ -- 8
+pop$ -- 45
+preamble$ -- 1
+purify$ -- 0
+quote$ -- 0
+skip$ -- 30
+stack$ -- 0
+substring$ -- 0
+swap$ -- 8
+text.length$ -- 0
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 0
+warning$ -- 0
+while$ -- 8
+width$ -- 9
+write$ -- 79
+(There were 5 warnings)
