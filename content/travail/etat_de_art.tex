@@ -2,51 +2,51 @@
 
 \subsection{Création de l'application}
 
-\textit{Android} et \textit{iOS} sont les deux systèmes d'exploitation mobile les plus utilisés sur les smartphones en 2018, ils se partagent respectivement $74.45\%$ et $22.5\%$ du marché \cite{market_share}. Il existe principalement deux solutions pour developper une application mobile sur ces plateformes :
+\textit{Android} et \textit{iOS} sont les deux systèmes d'exploitation mobile les plus utilisés sur les smartphones en 2018, ils se partagent respectivement $74.45\%$ et $22.5\%$ du marché \cite{market_share}. Il existe principalement deux solutions pour développer une application mobile sur ces plateformes :
 
 \begin{itemize}
-  \item \textit{Application native} : en utilisant les SDK (\textit{kit de developpement logiciel}) spécifiques à chaque plateforme (\textit{iOS} et \textit{Android}) qui fournissent des outils de developpement et de debuggages permettant de créer des applications pour ces plateformes ;
-  \item \textit{Application hybride} : en utilisant un \textit{framework multi-plateforme} permettant la création d'applications sur plusieurs plateformes avec le même code (sans utiliser directement les SDK de ces dernières).
+  \item \textbf{Application native} : en utilisant le \textit{SDK} (\textit{kit de developpement logiciel}) spécifique à chaque plateforme (\textit{iOS} ou \textit{Android}) qui fournit les outils de développement et de debogages permettant de créer des applications sur la plateforme concernée ;
+  \item \textbf{Application hybride} : en utilisant un \textit{framework multi-plateforme} permettant la création d'applications sur plusieurs plateformes avec le même code (sans utiliser directement les \textit{SDK} de ces dernières).
 \end{itemize}
 
 Les avantages des applications natives comparé aux applications hybrides sont :
 
 \begin{itemize}
-  \item La disponibilité de toutes les, et notamment des dernières, fonctionnalités des différents systèmes d'exploitation ;
-  \item La performance de l'application en accédant directement au système d'exploitation de la plateforme sur laquelle l'application est developpé.
+  \item La disponibilité de toutes les fonctionnalités des différents systèmes d'exploitation, notamment des dernières ;
+  \item La performance de l'application en accédant directement au système d'exploitation de la plateforme sur laquelle l'application est développée.
 \end{itemize}
 
-L'inconvénient majeur est qu'il est necessaire de developper, maintenir et deployer la même application 2 fois (une fois pour \textit{Android} et une fois pour \textit{iOS}).
+L'inconvénient majeur est qu'il est nécessaire de développer, maintenir et déployer la même application deux fois (une fois pour \textit{Android} et une fois pour \textit{iOS}).
 
-Les framework mutli-plateforme permettent d'écrire des application pour \textit{iOS} et \textit{Android} avec le même code (bien qu'il est aussi possible d'écrire du code spécifique à une plateforme) permettant d'avoir un \textit{time to market} plus court (temps nécessaire pour rendre le produit disponible sur le marché). Ces frameworks proposent aussi souvent des solutions modernes permettant encore de réduire ce \textit{time to market} en simplificant le developpement de l'application. Les inconvénients de ces frameworks sont propres à chacun. Pour commencer la comparaison j'ai choisi les frameworks activement developpés avec une communauté importante et active. Les frameworks les plus populaires en 2019 sont \textbf{Flutter} (71 662 stars avec 422 contributeurs sur Github \cite{flutter}), \textbf{React Native} (79 513 stars avec 1990 cotnributeurs \cite{react}) et \textbf{Ionic} (38 705 stars avec 331 contributeurs \cite{ionic}).
+Les frameworks multi-plateformes permettent d'écrire des applications pour \textit{iOS} et \textit{Android} avec le même code (bien qu'il soit aussi possible d'écrire du code spécifique à une plateforme) permettant d'avoir un \textit{time to market} réduit (temps nécessaire pour rendre le produit disponible sur le marché). Ces frameworks proposent aussi souvent des solutions modernes permettant encore de réduire ce \textit{time to market} en simplifiant le développement de l'application. Les inconvénients de ces frameworks sont propres à chacun. Pour commencer la comparaison, j'ai choisi les frameworks activement développés avec une communauté importante et active. Les frameworks les plus populaires en 2019 sont \textbf{Flutter} (71 662 stars avec 422 contributeurs sur \textit{Github} \cite{flutter}), \textbf{React Native} (79 513 stars avec 1990 cotnributeurs \cite{react}) et \textbf{Ionic} (38 705 stars avec 331 contributeurs \cite{ionic}).
 
 \begin{wrapfigure}{r}{0.25\textwidth}
   \includegraphics[width=100pt]{content/imgs/flutter.png}
 \end{wrapfigure}
 
-J'ai finalement opté pour \textbf{Flutter}, le framewok multi-plateforme developpé par \textit{Google}. Flutter utilise \textit{Dart}, un langage de programmation orienté objet utilisant un \textit{garbage collector} à la manière de \textit{Java}. J'ai choisi Flutter pour plusieurs raisons :
+J'ai finalement opté pour \textbf{Flutter}, le framework multi-plateforme développé par \textit{Google}. \textit{Flutter} utilise \textit{Dart}, un langage de programmation orienté objet utilisant un \textit{garbage collector}, comme \textit{Java} par exemple. J'ai choisi \textit{Flutter} pour plusieurs raisons :
 
 \paragraph{Performance}
-Le code de l'application est compilé à l'avance en code ARM natif et non pas au moment de l'exécution comme \textit{React Native} le fait, ce qui permet d'avoir des performances similaires aux applications natives. Ça semble être le framework de developpement mobile le plus performance du marché.
+Le code de l'application est compilé à l'avance en code \textit{ARM} natif (\textit{AOT-compiled}) et non pas au moment de l'exécution comme \textit{React Native} le fait, ce qui permet d'avoir des performances similaires aux applications natives. Ça semble être le framework de développement mobile le plus performance du marché.
 
 \paragraph{Composents graphiques}
-Flutter gère entièrement le rendu des éléments graphiques sur son propre canvas (\textit{= zone où sont dessiné les éléments graphique de l'application}) sans utiliser les composants graphiques natifs aux plateformes (comme le fait \textit{React Native}). On peux donc gérer au pixel près les éléments graphiques utilisés. L'application aura la même apparence indépendemment des versions des systèmes d'exploitation sur lesquels l'application est installé. Cela permet de gérer précisement ce qu'il sera affiché sur tous les appareils sans tester l'application sur une multitude de téléphones.
+\textit{Flutter} gère entièrement le rendu des éléments graphiques sur son propre canvas (\textit{zone où sont dessinés les éléments graphiques de l'application}) sans utiliser les composants graphiques natifs de la plateforme sur laquelle elle est compilée et installée (comme le fait \textit{React Native}). Il est donc possible de gérer au pixel près les éléments graphiques utilisés. L'application aura la même apparence indépendamment des versions des systèmes d'exploitation sur lesquels l'application est installée. Cela permet de gérer précisément ce qu'il sera affiché sur tous les appareils sans tester l'application sur une multitude de téléphones.
 
 
-\subsection{Stockage de données dans le cloud}
+\subsection{Stockage des données dans le cloud}
 
-L'application doit proposer le partage de données entres les bègues et les orthophonistes. Pour ce faire, les données doivent être stockées dans le cloud. Pour que les utilisateurs puissent gérer leurs données et que ces dernières soient uniquement accessibles aux personnes autorisés (et non pas sur un espace publique), ils devront posséder un compte utilisateur (adresse mail / mot de passe).
+L'application doit proposer le partage de données entre les bègues et les orthophonistes. Pour ce faire, les données doivent être stockées dans le cloud. Pour que les utilisateurs puissent gérer leurs données et que ces dernières soient uniquement accessibles aux personnes autorisées (et non pas sur un espace de stockage public), ils devront posséder un compte utilisateur (adresse mail / mot de passe).
 
 \begin{wrapfigure}{r}{0.25\textwidth}
   \includegraphics[width=100pt]{content/imgs/firebase.png}
 \end{wrapfigure}
-J'ai choisi d'utiliser les produits \textbf{Firebase}, en particuler la base de données noSQL \textbf{Firestore} pour stocker les exercices et le système d'authentification de Firebase pour gérer les utilisateurs. J'ai choisi Firebase pour plusieurs raisons :
+J'ai choisi d'utiliser les services \textbf{Firebase}, en particulier la base de données noSQL \textbf{Firestore} pour stocker les exercices et le système d'authentification de Firebase pour gérer les utilisateurs. J'ai choisi \textit{Firebase} pour plusieurs raisons :
 
 \paragraph{Facilité d'utilisation}
-Google developpe et maintient à jour un ensemble de \textit{plugins} permettant d'utiliser les produits Firebase facilement et rapidement sur les applications mobiles Flutter :  \textit{FlutterFire} \cite{flutterfire}. Ces plugins offrent les dernières fonctionnalités des produits Firebase.
+\textit{Google} développe et maintient à jour un ensemble de plugins permettant d'utiliser les produits \textit{Firebase} facilement et rapidement sur les applications mobiles \textit{Flutter} :  \textit{FlutterFire} \cite{flutterfire}. Ces plugins offrent les dernières fonctionnalités des services proposés par \textit{Firebase}.
 
-\paragraph{Evolution de l'application sur d'autres plateformes}
-Firebase est largement utilisé dans le monde informatique aujourd'hui, les produits Firebase peuvent être utilisés n'importe où facilement grâce à un grand nombre de plugins developpé par Google et par les communautés des différents framework / langages ou directement en utilisant les API des produits.
+\paragraph{Évolution de l'application sur d'autres plateformes}
+\textit{Firebase} est largement utilisé dans le monde informatique aujourd'hui, les services de \textit{Firebase} peuvent être utilisés n'importe où facilement grâce à un grand nombre de plugins développés par \textit{Google} et par les communautés des différents frameworks / langages ou en utilisant directement en utilisant les API des services.
 
-\paragraph{Evolution de l'utilisation du Cloud au sein de l'application}
-Pour l'instant, seuls \textit{Firestore}, \textit{Firebase Authentication} et \textit{Firebase Storage} sont prévu d'être utilisés pour l'application. Cependant Firebase intègre bien d'autres services pouvant potentiellement être utile pour l'application. Parmis eux, on peux citer \textit{Firebase Analytics} permettant d'analyser le comportement des utilisateurs sur l'application, \textit{Firebase AdMob} pour intégrer des publicités au sein de l'application ou encore \textit{Cloud Functions} pour exécuter des fonctions sur des serveurs. Tous ces produits peuvent être étroitement utilisé en harmonie, par exemple \textit{Cloud Firestore} peut automatiquement déclencher une fonction de \textit{Cloud Functions} lors de l'ajout d'un nouveau document dans la base de données. Donc, \textbf{sans} modifier le code de l'application côté client, il est possible d'enrichir ou de modifier les fonctionnalités de l'application en utilisant les différents services Firebase (authentification, publicité, base de données, stockage, etc.).
+\paragraph{Évolution de l'utilisation du cloud au sein de l'application}
+Pour l'instant, seuls les services \textit{Firestore}, \textit{Firebase Authentication} et \textit{Firebase Storage} sont prévus d'être utilisés pour l'application. Cependant, \textit{Firebase} intègre bien d'autres services pouvant potentiellement être utile pour l'application. Parmi eux, on peut citer \textit{Firebase Analytics} permettant d'analyser le comportement des utilisateurs sur l'application, \textit{Firebase AdMob} pour intégrer des publicités au sein de l'application ou encore \textit{Cloud Functions} pour exécuter des fonctions sur des serveurs. Tous ces produits peuvent être étroitement utilisés en harmonie, par exemple \textit{Cloud Firestore} peut automatiquement déclencher une fonction de \textit{Cloud Functions} lors de l'ajout d'un nouveau document dans la base de données. Donc, \textbf{sans} modifier le code de l'application côté client, il est possible d'enrichir ou de modifier les fonctionnalités de l'application en utilisant les différents services \textit{Firebase} (authentification, publicité, base de données, stockage, etc.).
